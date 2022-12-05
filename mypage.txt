@@ -1,0 +1,46 @@
+프로젝트 My page
+목표 : 자주 사용하는 즐겨찾기를 저장할 수 있도록 하기
+기능 : 즐겨찾기 저장, 수정, 조회, 제거
+회원 : 관리자(제거), 일반회원(즐겨찾기 저장, 수정, 조회)
+화면구성 : 
+- 로그인 : 모든 사용자
+- 추가 : 로그인한 사용자
+- 수정 : 로그인한 사용자
+- 조회 : 모든 사용자
+- 삭제 : 관리자
+
+DB구성
+
+번호 아이디   비번     분류 제목     유알엘   등록일자    소개글     관리자확인
+1000 문자(10) 문숫(10) 검색 문숫(20) 문숫(100) yyyy-mm-hh 문숫(50자)     1, 0
+		       학습
+                       취미
+                       금융
+                       쇼핑
+                       기타
+
+DROP TABLE IF EXISTS `mypage`;
+CREATE TABLE `mypage`(
+    `number` int(4) NOT NULL AUTO_INCREMENT,
+    `id` char(10) NOT NULL,
+    `pw` char(20) NOT NULL,
+    'kt' enum('검색','학습','취미','금융','쇼핑','기타'),
+    'title' char(20) NOT NULL,
+    'url' char(100) NOT NULL,
+    'date' DATE NOT NULL,
+    'info' char(50) NOT NULL,
+    'checknum' TINYINT(5) NOT NULL,
+    PRIMARY KEY(`number`),
+    UNIQUE KEY `idx_id` (`id`),
+    KEY `idx_title` (`title`),
+    KEY `idx_url` (`url`)
+) AUTO_INCREMENT=1005;
+
+INSERT INTO `mypage` value ('1', 'admin', '81dc9bdb52d04dc20036dbd8313ed055', '검색', '네이버', 'http://www.naver.com', '2021-04-01', '내가 자주 사용하는 검색 포털', '1');
+INSERT INTO `mypage` value ('1000', 'pp1', '674f3c2c1a8a6f90461e8a66fb5550ba', '검색', '네이버', 'http://www.naver.com', '2021-04-01', '내가 자주 사용하는 검색 포털', '0');
+INSERT INTO `mypage` value ('1001', 'pp2', '674f3c2c1a8a6f90461e8a66fb5550ba', '검색', '네이버', 'http://www.naver.com', '2021-04-01', '내가 자주 사용하는 검색 포털', '0');
+INSERT INTO `mypage` value ('1002', 'pp3', '674f3c2c1a8a6f90461e8a66fb5550ba', '검색', '네이버', 'http://www.naver.com', '2021-04-01', '내가 자주 사용하는 검색 포털', '0');
+INSERT INTO `mypage` value ('1003', 'pp4', '674f3c2c1a8a6f90461e8a66fb5550ba', '검색', '네이버', 'http://www.naver.com', '2021-04-01', '내가 자주 사용하는 검색 포털', '0');
+INSERT INTO `mypage` value ('1004', 'pp5', '674f3c2c1a8a6f90461e8a66fb5550ba', '검색', '네이버', 'http://www.naver.com', '2021-04-01', '내가 자주 사용하는 검색 포털', '0');
+
+

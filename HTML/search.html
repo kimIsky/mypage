@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+        <script src="../JS/jquery/jq.js"></script>		
+		<link rel="stylesheet" href="../CSS/dist/mypage.css">
+		<title><?=$site_title?></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">		
+	<style>
+	</style>
+	</head>
+	<body>
+		<header class="top_box">
+			<p class="in_t">안녕하세요. (<?=$_SESSION['id']?>)님</p>
+			<p class="out_bt"><a class="out_bt" href="./main.php?logout=ok">Logout</a></p>
+		</header>
+		<section id="pop_up" class="pop_up"></div><p id="x_box" class="x_box">X</p><p id="re_box" class="re_box">추가되었습니다.</p></section>
+		<section id="del_pop" class="del_pop"></div><p id="x_box" class="x_box">X</p><p id="re_box" class="re_box">정말 삭제하시겠습니까?</p><input class="del_bt" type="button" name="del_ok" value="확인"><input class="del_bt" type="button" name="del_no" value="취소"></section>		
+		<form class="add_box" method="POST" action="./main.php">
+			<h1 class="title_mid">WRITE</h1>
+			<select class="add_in_kt" name="category">
+				<option value="선택">선택</option>				
+				<option value="검색">검색</option>
+				<option value="학습">학습</option>
+				<option value="취미">취미</option>
+				<option value="금융">금융</option>
+				<option value="쇼핑">쇼핑</option>
+				<option value="기타">기타</option>
+			</select>
+			<input class="add_in_tt" type="text" name="title" placeholder=" 제목 입력">
+			<input class="add_in_url" type="url" name="url" placeholder=" URL 입력">
+			<input class="add_in_date" type="date" name="date">
+			<input class="add_in_info" type="text" name="info" placeholder=" 간단한 소개">
+			<input class="add_in_bt" type="submit" name="submit" value="추가">
+		</form>
+		<form action="./main.php" class="search_box" method="POST">
+			<h1 class="title_ss">SEARCH</h1>			
+			<select class="sc_select" name="sc_select">
+				<option value="전체">전체</option>				
+				<option value="분류">분류</option>
+				<option value="제목">제목</option>
+				<option value="URL">URL</option>
+			</select>
+			<input class="sc_input" type="text" name="sc_input" placeholder=" 검색 단어 입력">
+			<input class="sc_bt" type="submit" name="submit" value="검색">
+		</form>

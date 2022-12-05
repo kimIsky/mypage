@@ -1,0 +1,499 @@
+$back_c: #1e3d59;
+$font_c : #f5f0e1;
+$black_c : rgb( 89, 89, 89);
+$orange_c : #ff6240;
+$yellow_c : #ffc13b;
+$bar_c : #048948;
+* { margin : 0px; padding : 0px; font-family: 'Poor Story', cursive; }
+html, body{
+    width : 100%;
+    height : 100%;
+    background-color: $back_c;
+    position: relative;
+}
+.main_logo{
+    position: absolute;
+    z-index: 10;
+    top : 12%;
+    left : 45%;
+    transform: rotate(-30deg);
+    margin-left : -120px;
+}
+.admin_logo{
+    position: absolute;
+    z-index : 4;
+    top : 30%;
+    margin-top : -50px;    
+    left : 50%;
+    margin-left : 105px;
+    transform: rotate(30deg);
+    cursor: pointer;
+}
+.member_logo{
+    position: absolute;
+    z-index : 4;
+    top : 30%;
+    margin-top : 0px;    
+    left : 50%;
+    margin-left : 155px;
+    transform: rotate(50deg);
+    cursor: pointer;        
+}
+.log_box{
+    width : 300px;
+    height : 350px;
+    background-color: $font_c;
+    position : absolute;
+    top : 50%;
+    left : 50%;
+    margin-left : -150px;
+    margin-top : -175px;
+    border: 10px solid black;
+    border-radius: 100px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-items: center;
+    z-index: 5;
+    .tl_box{
+        width : 100%;
+        height : 80px;
+        color : black;
+        font-size: 3em;
+        margin-top : 10px;
+        text-align: center;
+        line-height: 100px;     
+    }  
+    .sb_box{
+        width : 100%;
+        height : 200px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        .idp_box{
+            width : 80%;
+            height : 30px;
+            font-size: 1em;
+            border: 2px solid $back_c;
+            border-radius: 10px;
+            padding-left: 20px;            
+            outline: none;
+        }
+        .cap_box{
+            @extend .idp_box;
+            width : 30%;
+            height : 34px;
+            background-color: $orange_c;
+            border : none;
+            padding-left : 0px;
+            border-radius: 0px;                       
+            #my_canvas{
+                width : 90%;
+                height : 30px;
+            }            
+        }
+        .check_num{
+            @extend .idp_box;
+            width : 30%;
+            height : 35px;
+            border-radius: 0px;            
+            border : none;
+        }
+        .ref_bt{
+            width: 20%;
+            height : 34px;
+            background-color: $orange_c;
+            color : $font_c;
+            font-size: 25px;
+            text-align: center;
+            line-height: 34px;
+            outline: none;
+            border : none;
+            cursor: pointer;
+        }
+        .in_bt{
+            @extend .idp_box;
+            background-color: $yellow_c;
+            color : black;
+            border : none;
+            padding-left: 0px;
+            cursor: pointer;
+        }
+    }
+}
+.top_box{
+    width : 70%;
+    height : 40px;
+    background-color: $bar_c;
+    margin : 1% 15% 0% 15%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    .in_t{
+        font-size: 1em;
+        color: $font_c;
+        margin : 10px;
+        line-height: 20px;          
+    }
+    .out_bt{
+        width : 80px;
+        height : 30px;
+        background-color: $orange_c;
+        color : $font_c;
+        text-align: center;
+        line-height: 28px;
+        font-size: 1em;
+        text-decoration: none;
+        border-radius: 5px;
+        margin : 5px;
+        cursor: pointer;
+    }
+    .a_bt{
+        width : 80px;
+        height : 30px;
+        text-decoration: none;
+        color : $font_c;
+        outline: none;
+        border: none;
+        float: left;
+    }
+    .pw_bt{
+        width : 100px;
+    }
+}
+.in_re_pw{
+    width : 260px;
+    height : 200px;
+    background-color: $bar_c;
+    position : absolute;
+    z-index : 7;
+    padding  : 20px;
+    top : 40%;
+    left : 50%;
+    margin-top : -100px;
+    margin-left : -150px;
+    display: none;
+    .in_pw{
+        width : 260px;
+        height : 30px;
+        background-color: $font_c;
+        color : black;
+        margin : 10px 0px;
+        border-radius: 10px;
+        border : none;
+        outline: none;
+        box-sizing: border-box;
+        padding-left : 10px;
+        cursor: pointer;
+    }
+    .new_pw_in{
+        @extend .in_pw;
+        width : 125px;
+        background-color: $back_c;
+        color : white;
+        margin-right: 10px;
+        float: left;
+    }
+    .no_bt{
+        @extend .in_pw;
+        width : 125px;
+        background-color: rgb( 89, 89, 89);
+        color : white;
+        float : left;
+    }
+}
+.pop_up{
+    width : 300px;
+    height : 100px;
+    background-color: $font_c;
+    border: 1px solid $black_c;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    margin-left: -150px;
+    z-index: 15;
+    display: none;
+    .re_box{
+        width : 300px;
+        height : 100px;
+        color : $back_c;
+        font-size: 2em;
+        text-align: center;
+        line-height: 100px;      
+        float: left;
+    }
+    .x_box{
+        width : 30px;
+        height : 30px;
+        font-size: 30px;
+        position: absolute;
+        left : 90%;
+        cursor: pointer;
+    }
+    .login_color{
+        color : $font_c;
+    }       
+}
+.pop_mar{
+    top : 50%;
+    margin-top: -230px;
+    background-color: $bar_c;
+    color : $font_c;
+    border : none;
+    display: none;
+}
+.del_pop{
+    width : 300px;
+    height : 100px;
+    background-color: $font_c;
+    border: 1px solid black;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    margin-left: -150px;
+    text-align: center;
+    display: none;
+    .re_box{
+        width : 300px;
+        height : 50px;
+        color : $back_c;
+        font-size: 1.5em;
+        text-align: center;
+        line-height: 80px;      
+        float: left;
+    }
+    .x_box{
+        width : 30px;
+        height : 30px;
+        font-size: 30px;
+        position: absolute;
+        left : 90%;
+        cursor: pointer;
+    }
+    .del_bt{
+        width : 50px;
+        height : 25px;
+        margin : 10px;
+        background-color: $back_c;
+        color : $font_c;
+        border : none;
+        outline : none;
+        border-radius: 5px;
+        cursor : pointer;
+    }
+}
+.add_box{
+    width : 70%;
+    height : 50px;
+    background-color: $font_c;
+    margin : 0% 15%;
+    padding : 10px 0px;
+    font-size: 1em;
+    text-align: center;
+    input::placeholder{
+        color : black;
+    }      
+    .title_mid{
+        width : 100px;
+        height : 36px;
+        color : white;
+        border-radius: 10px;
+        background-color: $back_c;
+        text-align: center;
+        line-height : 36px;
+        font-size: 1.5rem;
+        font-weight: normal;
+        margin : 7px 0px 7px 15px;
+        float: left;
+    }
+    .add_in_kt{
+        width : 100px;
+        height : 32px;
+        color: black;
+        border: 1px solid black;
+        border-radius: 5px;        
+        outline: none;
+        margin : 7px 0px;
+        cursor: pointer;
+    }
+    .add_in_tt{
+        @extend .add_in_kt;
+        width : 200px;
+        height : 30px;
+    }
+    .add_in_url{
+        @extend .add_in_kt;
+        width : 300px;
+        height : 30px;        
+    }
+    .add_in_date{
+        @extend .add_in_kt;
+        width : 200px;
+        height : 30px;        
+    }
+    .add_in_info{
+        @extend .add_in_kt;
+        width : 300px;
+        height : 30px;
+    }
+    .add_in_bt{
+        width : 5%;
+        height : 36px;
+        border-radius: 10px;
+        background-color: $back_c;
+        color: white;
+        outline: none;
+        border: none;
+        font-size: 1rem;
+        text-align: center;
+        margin : 5px 0px;
+        cursor: pointer;              
+    }
+}
+.search_box{
+    @extend .add_box;
+    input::placeholder{
+        color : black;
+    }       
+    .title_ss{
+        width : 110px;
+        height : 36px;
+        color : white;
+        border-radius: 10px;
+        background-color: $orange_c;
+        text-align: center;
+        font-size: 1.5rem;
+        line-height : 36px;
+        font-weight: normal;        
+        margin : 7px 0px 7px 30%;
+        float: left;
+    }
+    .sc_input {
+        @extend .add_in_kt;       
+        width : 20%;
+        margin : 7px 0px 7px 10px;
+        float: left;    
+    }
+    .sc_bt{
+        @extend .add_in_bt;
+        background-color: $orange_c;
+        color : white;
+        margin : 7px 5px;
+        float: left;    
+    }
+}
+.mid_title{
+    width : 70%;
+    height : 36px;
+    background-color: #a20025;
+    margin : 10px 15% 0px 15%;
+    text-align: center;
+}
+.mid_title>p{
+    width : 100%;
+    height : 36px;
+    color : white;
+    border-radius: 10px;
+    background-color: #a20025;
+    font-size: 2rem;
+    text-align: center;
+    line-height : 36px;
+    float: left;
+}
+.no_search{
+    width : 70%;
+    height : 36px;
+    background-color: $font_c;
+    margin : 0px 15% 0px 15%;
+    text-align: center;
+    line-height: 36px;
+}
+.back_box{
+    width : 70%;
+    background-color: $font_c;
+    margin : 0px 15%;
+    float: left;
+    .in_data{
+        width : 100%;
+        height : 50px;
+        background-color: $font_c;
+        input::placeholder{
+            color : black;
+        }    
+        .number_ing{
+            width : 40px;
+            height : 40px;
+            color: $font_c;
+            background-color: $back_c;
+            border-radius: 50%;
+            font-size : 1em;
+            font-weight: bold;
+            text-align: center;
+            line-height: 40px;
+            margin : 5px 13px;
+            float: left;               
+        }        
+        .data_in_kt{
+            width : 10%;
+            height : 50px;
+            color: black;           
+            background-color: $font_c;
+            outline: none;
+            border: none;
+            text-align: center;
+            cursor: pointer;
+            float:  left;
+        }
+        .data_in_tt{
+            @extend .data_in_kt;
+            width : 15%;
+        }
+        .data_in_url{
+            @extend .data_in_kt;
+            width : 15%;
+        }
+        .data_in_move{
+            @extend .data_in_kt;
+            width : 5%;
+            background-color: $orange_c;
+            color : white;
+            text-decoration: none;
+            line-height : 50px;
+        }
+        .data_in_date{
+            @extend .data_in_kt;
+            width : 10%;
+            float: left;
+        }
+        .data_in_info{
+            @extend .data_in_kt;
+            width : 20%;
+            float: left;       
+        }
+        .data_in_id{
+            width : 10%;
+            height : 50px;
+            font-size: 1em;
+            line-height: 50px;
+            color : white;
+            background-color: $bar_c;
+            float: left;
+            text-align: center;               
+        }    
+        .data_in_bt{
+            width : 40px;
+            height : 40px;
+            background-color: $yellow_c;
+            color: $back_c;
+            outline: none;
+            border: none;
+            margin : 5px 13px;
+            font-size: 1rem;
+            text-align: center;
+            border-radius: 50%;
+            cursor: pointer;
+            float: left;         
+        }
+    }
+}
